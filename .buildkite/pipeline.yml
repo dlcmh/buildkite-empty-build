@@ -1,0 +1,12 @@
+# steps:
+#   - label: 'Run test build'
+#     key: test-build
+#     commands:
+#       - npm ci
+#     plugins:
+#       - docker#v3.9.0:
+#           image: node:16
+
+steps:
+  - label: 'Example Test'
+    command: echo "Hello!"
