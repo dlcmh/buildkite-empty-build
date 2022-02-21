@@ -2,13 +2,13 @@ steps:
   - label: 'Example Test (just echo Hello)'
     command: echo "Hello!"
 
-  - label: 'Run NodeJS test build (just run `npm ci`)'
-    key: nodejs-test-build
-    commands:
-      - npm ci
-    plugins:
-      - docker#v3.9.0:
-          image: node:16
+  # - label: 'Run NodeJS test build (just run `npm ci`)'
+  #   key: nodejs-test-build
+  #   commands:
+  #     - npm ci
+  #   plugins:
+  #     - docker#v3.9.0:
+  #         image: node:16
 
   # - label: ':ecs: :rocket:'
   #   concurrency_group: 'my-service-deploy'
