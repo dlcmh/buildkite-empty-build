@@ -1,16 +1,23 @@
 steps:
-  - label: 'Example Test'
+  - label: 'Example Test (just echo Hello)'
     command: echo "Hello!"
-  - label: ':ecs: :rocket:'
-    concurrency_group: 'my-service-deploy'
-    concurrency: 1
+  - label: 'Run NodeJS test build (just run `npm ci`)'
+    key: nodejs-test-build
+    commands:
+      - npm ci
     plugins:
-      - ecs-deploy#v1.4.1:
-          cluster: 'defaultEcsCluster'
-          service: 'my-service'
-          task-definition: 'examples/hello-world.json'
-          task-family: 'hello-world'
-          image: '${ECR_REPOSITORY}/hello-world:${BUILDKITE_BUILD_NUMBER}'
+      - docker#v3.9.0:
+          image: node:16
+  # - label: ':ecs: :rocket:'
+  #   concurrency_group: 'my-service-deploy'
+  #   concurrency: 1
+  #   plugins:
+  #     - ecs-deploy#v1.4.1:
+  #         cluster: 'defaultEcsCluster'
+  #         service: 'my-service'
+  #         task-definition: 'examples/hello-world.json'
+  #         task-family: 'hello-world'
+  #         image: '${ECR_REPOSITORY}/hello-world:${BUILDKITE_BUILD_NUMBER}'
   # - label: 'Run NodeJS test build'
   #   key: nodejs-test-build
   #   commands:
