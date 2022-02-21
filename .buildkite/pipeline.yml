@@ -10,3 +10,10 @@
 steps:
   - label: 'Example Test'
     command: echo "Hello!"
+  - label: 'Run NodeJS test build'
+    key: nodejs-test-build
+    commands:
+      - npm ci
+    plugins:
+      - docker#v3.9.0:
+          image: node:16
