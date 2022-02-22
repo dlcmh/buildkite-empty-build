@@ -1,6 +1,6 @@
 steps:
   - label: 'run docker command'
-    command: docker
+    command: docker run hello-world
 
   # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
   - label: 'curl Task metadata endpoint version 4'
