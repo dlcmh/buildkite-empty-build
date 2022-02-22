@@ -3,7 +3,7 @@ steps:
   #   command: docker run hello-world
 
   - label: 'file-counter plugin'
-    command: ls
+    command: pwd
     plugins:
       - dlcmh/file-counter#v1.0.0:
           pattern: '*.md'
