@@ -3,6 +3,7 @@ steps:
   #   command: docker run hello-world
 
   - label: 'file-counter plugin'
+    command: ls
     plugins:
       - dlcmh/file-counter:
           pattern: '*.js'
