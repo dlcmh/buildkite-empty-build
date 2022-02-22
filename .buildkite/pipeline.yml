@@ -5,7 +5,7 @@ steps:
   - label: 'file-counter plugin'
     command: ls
     plugins:
-      - dlcmh/file-counter#v1.0.0.0:
+      - dlcmh/file-counter#v1.0.0:
           pattern: '*.md'
 
   # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
