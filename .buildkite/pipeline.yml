@@ -1,4 +1,3 @@
 steps:
-  - label: ':books:'
-    plugins:
+  - plugins:
       - library-example#v1.0.0: ~
