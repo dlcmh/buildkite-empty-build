@@ -1,6 +1,6 @@
 steps:
-  # - label: 'run docker command'
-  #   command: docker run hello-world
+  - label: 'run npm ci'
+    command: npm ci
 
   - label: 'file-counter plugin'
     command: echo
