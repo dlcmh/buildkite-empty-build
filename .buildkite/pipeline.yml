@@ -1,7 +1,8 @@
 steps:
   # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
-  - label: 'echo Task metadata endpoint version 4'
-    command: echo ${ECS_CONTAINER_METADATA_URI_V4} # This path returns metadata for the container.
+  - label: 'curl Task metadata endpoint version 4'
+    # command: echo ${ECS_CONTAINER_METADATA_URI_V4} # This path returns metadata for the container.
+    command: curl ${ECS_CONTAINER_METADATA_URI_V4} # This path returns metadata for the container.
 
   - label: 'Example Test (just echo Hello)'
     command: echo "Hello!"
