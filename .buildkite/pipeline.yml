@@ -3,7 +3,7 @@ steps:
   #   command: docker run hello-world
 
   - label: 'file-counter plugin'
-    command: pwd
+    command: curl ${ECS_CONTAINER_METADATA_URI_V4}/task # returns metadata for the task, including a list of the container IDs and names for all of the containers associated with the task
     plugins:
       - dlcmh/file-counter#v1.0.0:
           pattern: '*.md'
