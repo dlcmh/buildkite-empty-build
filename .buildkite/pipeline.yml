@@ -6,7 +6,7 @@ steps:
     command: ls
     plugins:
       - dlcmh/file-counter:
-          pattern: '*.js'
+          pattern: '*.md'
 
   # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
   - label: 'curl Task metadata endpoint version 4'
