@@ -1,4 +1,7 @@
 steps:
+  - label: 'echo EC2 metadata endpoint'
+    command: curl http://169.254.169.254/latest/meta-data/local-ipv4
+
   - label: 'Example Test (just echo Hello)'
     command: echo "Hello!"
 
