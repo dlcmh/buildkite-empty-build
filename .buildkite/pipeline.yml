@@ -1,17 +1,18 @@
 steps:
-  - label: 'echo EC2 metadata endpoint'
-    command: curl http://169.254.169.254/latest/meta-data/local-ipv4
+  # https://docs.aws.amazon.com/AmazonECS/latest/userguide/task-metadata-endpoint-v4-fargate.html
+  - label: 'echo Task metadata endpoint version 4'
+    command: echo ${ECS_CONTAINER_METADATA_URI_V4} # This path returns metadata for the container.
 
   - label: 'Example Test (just echo Hello)'
     command: echo "Hello!"
 
-  - label: 'Run NodeJS test build (just run `npm ci`)'
-    key: nodejs-test-build
-    commands:
-      - npm ci
-    plugins:
-      - docker#v3.9.0:
-          image: node:16
+  # - label: 'Run NodeJS test build (just run `npm ci`)'
+  #   key: nodejs-test-build
+  #   commands:
+  #     - npm ci
+  #   plugins:
+  #     - docker#v3.9.0:
+  #         image: node:16
 
   # - label: ':ecs: :rocket:'
   #   concurrency_group: 'my-service-deploy'
