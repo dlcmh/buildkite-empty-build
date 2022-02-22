@@ -1,6 +1,9 @@
 steps:
   - label: 'run npm ci'
     command: npm ci
+    plugins:
+      - docker#v3.9.0:
+          image: node:16
 
   - label: 'file-counter plugin'
     command: echo
